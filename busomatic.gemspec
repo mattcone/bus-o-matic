@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'bus_rat/version'
+require 'bus-o-matic/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "bus_rat"
-  spec.version       = BusRat::VERSION
+  spec.name          = "bus-o-matic"
+  spec.version       = Bus-o-matic::VERSION
   spec.authors       = ["Matt Cone"]
   spec.email         = ["matt@macinstruct.com"]
   spec.summary       = %q{A wrapper for the Pittsburgh Port Authority API}
   spec.description   = %q{A wrapper for the Pittsburgh Port Authority API}
-  spec.homepage      = "https://github.com/mattcone/bus_rat"
+  spec.homepage      = "https://github.com/mattcone/bus-o-matic"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

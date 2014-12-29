@@ -1,19 +1,21 @@
-# Busomatic
+# Bus-o-matic
 
-Busomatic is a Ruby wrapper for the [Pittsburgh Port Authority API] 
+A Ruby wrapper for the [Pittsburgh Port Authority API] 
 (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
+Currently under active development — not yet suitable for use in production
+environments.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'busomatic'
+gem 'bus-o-matic'
 ```
 
 Or install it yourself as:
 
-    $ gem install busomatic
+    $ gem install bus-o-matic
 
 ## Usage
 
