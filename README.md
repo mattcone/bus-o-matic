@@ -1,6 +1,6 @@
-# BusRat
+# Busomatic
 
-```bus_rat``` is a Ruby wrapper for the [Pittsburgh Port Authority API] 
+Busomatic is a Ruby wrapper for the [Pittsburgh Port Authority API] 
 (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
 
 ## Installation

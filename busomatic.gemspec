@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = BusRat::VERSION
   spec.authors       = ["Matt Cone"]
   spec.email         = ["matt@macinstruct.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A wrapper for the Pittsburgh Port Authority API}
+  spec.description   = %q{A wrapper for the Pittsburgh Port Authority API}
+  spec.homepage      = "https://github.com/mattcone/bus_rat"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,4 +20,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency 'rspec'
+  
+  spec.add_runtime_dependency "httparty"
+  spec.add_runtime_dependency "hashie"
 end
