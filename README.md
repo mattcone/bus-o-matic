@@ -8,12 +8,12 @@ Busomatic is a Ruby wrapper for the [Pittsburgh Port Authority API]
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'bus_rat'
+gem 'busomatic'
 ```
 
 Or install it yourself as:
 
-    $ gem install bus_rat
+    $ gem install busomatic
 
 ## Usage
 
