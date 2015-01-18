@@ -24,10 +24,12 @@ Or install it yourself as:
 
 Your project needs to require Bus-o-matic. This can be put in an initializer.
 
-    require 'busomatic'
+```ruby
+require 'busomatic'
 
-    key = "xxxxxxxxxxxxxxxxxxxx"
-    PIT::Busomatic.key = key
+key = "xxxxxxxxxxxxxxxxxxxx"
+PIT::Busomatic.key = key
+```
 
 ## Usage
 
