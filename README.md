@@ -1,9 +1,12 @@
 # Bus-o-matic
 
-A Ruby wrapper for the [Pittsburgh Port Authority API] 
+Bus-o-matic is a simple Ruby wrapper for the [Pittsburgh Port Authority API] 
 (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
-Currently under active development — not yet suitable for use in production
-environments.
+
+## API Key
+
+Bus-o-matic requires an API key. You can request one from [Port Authority] 
+(http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
 
 ## Installation
 
@@ -17,14 +20,23 @@ Or install it yourself as:
 
     $ gem install bus-o-matic
 
+## Setup
+
+Your project needs to require Bus-o-matic. This can be put in an initializer.
+
+    require 'busomatic'
+
+    key = "xxxxxxxxxxxxxxxxxxxx"
+    PIT::Busomatic.key = key
+
 ## Usage
 
 TODO: Write usage instructions here
 
 ## Contributing
 
-This is my first Ruby gem, so I appreciate any issues or pull requests with 
-suggested improvements.
+This is my first Ruby gem, so I appreciate you reporting issues or creating 
+pull requests. 
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -32,6 +44,7 @@ suggested improvements.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+
 ## License
 
-Copyright (c) 2014 Matt Cone. See the LICENSE.txt file for details.
+See the LICENSE.txt file for details.
