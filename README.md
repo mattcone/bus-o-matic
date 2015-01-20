@@ -2,7 +2,7 @@
 
 Bus-o-matic is a simple Ruby wrapper for the [Pittsburgh Port Authority API] 
 (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
-This gem requires an API key from Port Authority.
+You can obtain an API key from the Port Authority.
 
 ## Installation
 
@@ -14,7 +14,8 @@ gem 'bus-o-matic'
 
 ## Setup
 
-Your project needs to require Bus-o-matic. This can be put in an initializer.
+To get started with Bus-o-matic, require the gem and add your Port Authority
+API key. This can be put in an initializer.
 
 ```ruby
 require 'bus-o-matic'
@@ -25,9 +26,49 @@ PIT::Busomatic.key = key
 
 ## Usage
 
+The follow examples illustrate how Bus-o-matic can be used to interact with the
+Port Authority API.
+
+### Routes and Stops
+
+Retrieve the stops for Route 16 heading Inbound.
+
+```ruby
+PIT::Busomatic.stops :rt => 16, :dir => :INBOUND
+```
+
+### Vehicles
+
+Returns an array of vehicles that are active on Route 16.
+
+```ruby
+PIT::Busomatic.vehicles :rt => 16
+```
+
+Returns an array of vehicles that are active on Routes 13, 16, and 17.
+
+```ruby
+PIT::Busomatic.vehicles :rt => ["16","17","13"]
+```
+
+Returns information about a specific vehicle.
+
+```ruby
+PIT::Busomatic.vehicles :vid => 6013
+```
+
+Returns information about multiple vehicles.
+
+```ruby
+PIT::Busomatic.vehicles :vid => ["6013","6001"]
+```
+
+
+### Predicted Arrival Times
+
 ### System Time
 
-Retrieve the official Port Authority API system time. 
+Returns the official Port Authority API system time. 
 
 ```ruby
 PIT::Busomatic.time
