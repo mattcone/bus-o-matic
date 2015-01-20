@@ -3,8 +3,7 @@
 Bus-o-matic is a simple Ruby wrapper for the [Pittsburgh Port Authority API] 
 (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
 This gem borrows heavily from [cta-api] (https://github.com/fbonetti/cta-api)
-by [Frank Bonetti] (https://github.com/fbonetti). You'll need to request an API 
-key from the Port Authority to use Bus-o-matic.
+by [Frank Bonetti] (https://github.com/fbonetti). 
 
 ## Installation
 
@@ -16,8 +15,9 @@ gem 'bus-o-matic'
 
 ## Setup
 
-To get started with Bus-o-matic, require the gem and add your Port Authority
-API key. This can be put in an initializer.
+Before using Bus-o-matic, you'll need to request an API key from the [Port 
+Authority] (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx). 
+Require the gem and add your Port Authority API key. This can be put in an initializer.
 
 ```ruby
 require 'bus-o-matic'
