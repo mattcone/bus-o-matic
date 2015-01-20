@@ -39,27 +39,19 @@ PIT::Busomatic.stops :rt => 16, :dir => :INBOUND
 
 ### Vehicles
 
-Returns an array of vehicles that are active on Route 16.
+
 
 ```ruby
+# Returns an array of vehicles that are active on Route 16.
 PIT::Busomatic.vehicles :rt => 16
-```
 
-Returns an array of vehicles that are active on Routes 13, 16, and 17.
-
-```ruby
+# Returns an array of vehicles that are active on Routes 13, 16, and 17.
 PIT::Busomatic.vehicles :rt => ["16","17","13"]
-```
 
-Returns information about a specific vehicle.
-
-```ruby
+# Returns information about a specific vehicle.
 PIT::Busomatic.vehicles :vid => 6013
-```
 
-Returns information about multiple vehicles.
-
-```ruby
+# Returns information about multiple vehicles.
 PIT::Busomatic.vehicles :vid => ["6013","6001"]
 ```
 
