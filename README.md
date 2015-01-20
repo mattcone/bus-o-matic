@@ -2,7 +2,9 @@
 
 Bus-o-matic is a simple Ruby wrapper for the [Pittsburgh Port Authority API] 
 (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
-You can obtain an API key from the Port Authority.
+This gem borrows heavily from [cta-api] (https://github.com/fbonetti/cta-api)
+by [Frank Bonetti] (https://github.com/fbonetti). You'll need to request an API 
+key from the Port Authority to use Bus-o-matic.
 
 ## Installation
 
@@ -38,8 +40,6 @@ PIT::Busomatic.stops :rt => 16, :dir => :INBOUND
 ```
 
 ### Vehicles
-
-
 
 ```ruby
 # Returns an array of vehicles that are active on Route 16.
