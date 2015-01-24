@@ -34,23 +34,33 @@ The following examples illustrate how you can use Bus-o-matic.
 
 ### Routes and Stops
 
-Bus-o-matic can be used to list all of the routes currently being tracked in 
-real time by Port Authority. You can also get the directions for a particular 
-route and a list all of the stops on a route.
+Bus-o-matic can list all of the routes availabe in the Port Authority API. 
+You can also get the directions for a particular route, and a list all of 
+the stops on a route.
 
 ```ruby
 
-# list all available routes
+# Retrieve a list of all available routes
 PIT::Busomatic.routes
 
-# gets the available directions for the specified route (INBOUND, OUTBOUND, etc.)
+# Retrieve the available directions for the specified route (INBOUND, OUTBOUND, etc.)
 PIT::Busomatic.directions :rt => 16
 
-# Retrieve the stops for Route 16 heading Inbound.
+# Retrieve the stops for Route 16 heading Inbound
 PIT::Busomatic.stops :rt => 16, :dir => :INBOUND
 ```
 
 Note that the available directions (INBOUND, etc.) appear to be case sensitive. 
+
+### Patterns
+
+Bus-o-matic can retrieve a set of geo-positional points for a route, something 
+known as a "pattern." Patterns can be used to outline routes on maps.
+
+```ruby
+# Retrieve the pattern for Route 16
+PIT::Busomatic.patterns :rt => 16
+```
 
 ### Vehicles
 
@@ -86,6 +96,8 @@ Note that you cannot combine both `rt` and `vid` in a single request.
 
 ### Predicted Arrival Times
 
+
+
 ### System Time
 
 Returns the official Port Authority API system time. 
@@ -109,4 +121,6 @@ pull requests.
 
 ## License
 
-See the LICENSE.txt file for details.
+Copyright (c) 2015 Matt Cone and 2013 fbonetti.
+
+The MIT License (MIT). See the LICENSE.txt file for details.
