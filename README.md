@@ -30,21 +30,33 @@ PIT::Busomatic.key = key
 
 ## Usage
 
-The following examples illustrate how Bus-o-matic can be used to interact with 
-the Port Authority API.
+The following examples illustrate how you can use Bus-o-matic.
 
 ### Routes and Stops
 
+Bus-o-matic can be used to list all of the routes currently being tracked in 
+real time by Port Authority. You can also get the directions for a particular 
+route and a list all of the stops on a route.
+
 ```ruby
+
+# list all available routes
+PIT::Busomatic.routes
+
+# gets the available directions for the specified route (INBOUND, OUTBOUND, etc.)
+PIT::Busomatic.directions :rt => 16
+
 # Retrieve the stops for Route 16 heading Inbound.
 PIT::Busomatic.stops :rt => 16, :dir => :INBOUND
 ```
 
+Note that the available directions (INBOUND, etc.) appear to be case sensitive. 
+
 ### Vehicles
 
-You can use Bus-o-matic to find all of the vehicles that are currently active 
-on a route, or retrieve information about a specific vehicle. The first step is
-finding the active vehicles on a route.
+Bus-o-matic can find all of the vehicles that are currently active on a route, 
+or retrieve information about a specific vehicle. The first step is finding 
+the active vehicles on a route.
 
 ```ruby
 # Returns an array of vehicles that are active on Route 16.
@@ -85,7 +97,7 @@ PIT::Busomatic.time
 
 ## Contributing
 
-This is my first Ruby gem, so I appreciate you reporting issues or creating 
+This is my first Ruby gem, so I'd appreciate you reporting issues or creating 
 pull requests. 
 
 1. Fork it
