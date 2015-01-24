@@ -42,13 +42,27 @@ PIT::Busomatic.stops :rt => 16, :dir => :INBOUND
 
 ### Vehicles
 
+You can use Bus-o-matic to find all of the vehicles that are currently active 
+on a route, or retrieve information about a specific vehicle. The first step is
+finding the active vehicles on a route.
+
 ```ruby
 # Returns an array of vehicles that are active on Route 16.
 PIT::Busomatic.vehicles :rt => 16
+```
 
+You can retrieve information for vehicles on more than one route. Up to 10 
+routes can be specified at once.
+
+```ruby
 # Returns an array of vehicles that are active on Routes 13, 16, and 17.
 PIT::Busomatic.vehicles :rt => ["16","17","13"]
+```
 
+You can also find information about one or more vehicles that are currently
+active. Up to 10 vehicle IDs can be specified at once.
+
+```ruby
 # Returns information about a specific vehicle.
 PIT::Busomatic.vehicles :vid => 6013
 
@@ -56,6 +70,7 @@ PIT::Busomatic.vehicles :vid => 6013
 PIT::Busomatic.vehicles :vid => ["6013","6001"]
 ```
 
+Note that you cannot combine both `rt` and `vid` in a single request.
 
 ### Predicted Arrival Times
 
