@@ -38,9 +38,8 @@ The following examples illustrate how you can use Bus-o-matic.
 
 ### Routes and Stops
 
-Bus-o-matic can list all of the routes availabe in the Port Authority API. 
-You can also get the directions for a particular route, and a list all of 
-the stops on a route.
+Bus-o-matic can list all of the routes available. You can also get the 
+directions for a particular route, and a list all of the stops on a route.
 
 ```ruby
 
@@ -96,7 +95,8 @@ PIT::Busomatic.vehicles :vid => 6013
 PIT::Busomatic.vehicles :vid => ["6013","6001"]
 ```
 
-Note that you cannot combine both `rt` and `vid` parameters in a single request.
+Note that you cannot combine both the `rt` and `vid` parameters in a single 
+request.
 
 ### Predicted Arrival Times
 
