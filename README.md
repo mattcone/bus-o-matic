@@ -1,5 +1,7 @@
 # Bus-o-matic
 
+[![Code Climate](https://codeclimate.com/repos/54c45d61695680238c000c6f/badges/a02f530f79ad43d83de5/gpa.svg)](https://codeclimate.com/repos/54c45d61695680238c000c6f/feed) [![Gem Version](https://badge.fury.io/rb/bus-o-matic.svg)](http://badge.fury.io/rb/bus-o-matic)
+
 Bus-o-matic is a simple Ruby wrapper for the [Pittsburgh Port Authority API] 
 (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
 This gem allows you to retrieve real-time information about vehicles, routes, 
