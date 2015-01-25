@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Bus-o-matic::VERSION
   spec.authors       = ["Matt Cone"]
   spec.email         = ["matt@macinstruct.com"]
-  spec.summary       = %q{A wrapper for the Pittsburgh Port Authority API}
-  spec.description   = %q{A wrapper for the Pittsburgh Port Authority API}
+  spec.summary       = %q{A wrapper for the Pittsburgh Port Authority TrueTime Bus API}
+  spec.description   = %q{A wrapper for the Pittsburgh Port Authority TrueTime Bus API}
   spec.homepage      = "https://github.com/mattcone/bus-o-matic"
   spec.license       = "MIT"
 
@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   
   spec.add_runtime_dependency "httparty"
   spec.add_runtime_dependency "hashie"
+  spec.add_runtime_dependency "time"
 end
