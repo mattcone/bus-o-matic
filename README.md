@@ -1,6 +1,6 @@
 # Bus-o-matic
 
-[![Code Climate](https://codeclimate.com/repos/54c45d61695680238c000c6f/badges/a02f530f79ad43d83de5/gpa.svg)](https://codeclimate.com/repos/54c45d61695680238c000c6f/feed)
+[![Code Climate](https://codeclimate.com/github/mattcone/bus-o-matic/badges/gpa.svg)](https://codeclimate.com/github/mattcone/bus-o-matic)
 [![Dependency Status](https://gemnasium.com/mattcone/bus-o-matic.svg)](https://gemnasium.com/mattcone/bus-o-matic)
 [![Gem Version](https://badge.fury.io/rb/bus-o-matic.svg)](http://badge.fury.io/rb/bus-o-matic)
 
