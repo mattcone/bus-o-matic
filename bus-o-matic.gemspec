@@ -8,4 +8,7 @@ Gem::Specification.new do |s|
   s.description   = %q{A wrapper for the Pittsburgh Port Authority TrueTime Bus API}
   s.homepage      = "https://github.com/mattcone/bus-o-matic"
   s.license       = "MIT"
+  
+  spec.add_runtime_dependency "httparty"
+  spec.add_runtime_dependency "hashie"
 end
