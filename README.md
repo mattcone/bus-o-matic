@@ -92,11 +92,40 @@ PIT::Busomatic.vehicles :vid => 6013
 PIT::Busomatic.vehicles :vid => ["6013","6001"]
 ```
 
-Note that you cannot combine both `rt` and `vid` in a single request.
+Note that you cannot combine both `rt` and `vid` parameters in a single request.
 
 ### Predicted Arrival Times
 
+Bus-o-matic can return predicted arrival times for one or more buses. Up to 10 
+vehicle IDs can be specified at once. Note that you cannot combine both `vid` 
+and `stpid` parameters in a single request.
 
+```ruby
+# Returns predictions for a single vehicle.
+PIT::Busomatic.predictions :vid => 5629
+
+# Returns predictions for multiple vehicles. 
+PIT::Busomatic.predictions :vid => ["5629","5604"]
+```
+
+You can also retrieve predictions for one or more stops. Up to 10 stop IDs can 
+be specified at once. You can combine the `stpid` and `rt` parameters, as shown
+below.
+
+```ruby
+
+# Returns predictions for all buses on all applicable routes for single stop.
+PIT::Busomatic.predictions :stpid => 1326
+
+# Returns predictions for multiple stops.
+PIT::Busomatic.predictions :stpid => ["1326","18320","18563"]
+
+# Returns predictions for all buses on Route 16 for a single stop 
+PIT::Busomatic.predictions :stpid => 1326, :rt => 16
+
+# Returns predictions for buses on Routes 13, 16, and 17 for Stop 1326.
+PIT::Busomatic.predictions :stpid => 1326, :rt => ["13","16","17"]
+```
 
 ### System Time
 
