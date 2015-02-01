@@ -11,7 +11,17 @@ Gem::Specification.new do |s|
   s.platform      = Gem::Platform::RUBY
   
   s.require_paths = ['lib']
-  s.files = Dir.glob("**/*").reject { |x| File.directory?(x) }
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+
   s.add_dependency "httparty", '~> 0.13.3'
   s.add_dependency "hashie", '~> 3.3'
+  
+  s.add_development_dependency "bundler", "~> 1.5"
+  s.add_development_dependency "rake"
+  s.add_development_dependency "minitest"
+  s.add_development_dependency "minitest-reporters"
+  s.add_development_dependency "webmock"
+  s.add_development_dependency "vcr"
 end
