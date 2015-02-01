@@ -12,7 +12,6 @@
 *.o
 *.a
 mkmf.log
-travis.yml
 
 # Ignore application configuration
 /config/application.yml

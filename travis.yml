@@ -1,0 +1,19 @@
+language: ruby
+cache: bundler
+
+rvm:
+  - jruby
+  - 2.0.0
+
+script: 'bundle exec rake'
+
+addons:
+  code_climate:
+    repo_token: 2468f6cea21cd23734103a0f4f3bd595d828122daf7fb1b5bd15af2daf07d724
+
+notifications:
+  email:
+    recipients:
+      - matt@macinstruct.com
+    on_failure: change
+    on_success: never
