@@ -3,6 +3,8 @@
 [![Code Climate](https://codeclimate.com/github/mattcone/bus-o-matic/badges/gpa.svg)](https://codeclimate.com/github/mattcone/bus-o-matic)
 [![Dependency Status](https://gemnasium.com/mattcone/bus-o-matic.svg)](https://gemnasium.com/mattcone/bus-o-matic)
 [![Gem Version](https://badge.fury.io/rb/bus-o-matic.svg)](http://badge.fury.io/rb/bus-o-matic)
+[![Build Status](https://travis-ci.org/mattcone/bus-o-matic.svg?branch=master)](https://travis-ci.org/mattcone/bus-o-matic)
+[![Test Coverage](https://codeclimate.com/github/mattcone/bus-o-matic/badges/coverage.svg)](https://codeclimate.com/github/mattcone/bus-o-matic)
 
 Bus-o-matic is a simple Ruby wrapper for the [Pittsburgh Port Authority API] 
 (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
