@@ -15,5 +15,5 @@ VCR.configure do |config|
   config.ignore_hosts 'codeclimate.com'
 end
 
-#we need the actual library file
+# We need the actual library file
 require_relative '../lib/bus-o-matic.rb'

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+		<bustime-response>
+
+        	<vehicle>
+        		<vid>5520</vid>
+        		<tmstmp>20150201 14:44</tmstmp>
+	    		<lat>40.478137559157155</lat>
+            	<lon>-80.03134366548979</lon>
+				<hdg>201</hdg>
+				<pid>2227</pid>
+        		<rt>16</rt>
+        		<des>Downtown</des>
+        		<pdist>17273</pdist>
+
+            	<dly>false</dly> 
+            	<spd>31</spd>
+				<tablockid>016 -092</tablockid>
+				<tatripid>21291</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+		</bustime-response>

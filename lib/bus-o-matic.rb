@@ -82,7 +82,7 @@ module PIT
       options.merge!({
         :key => @@key
       })
-      options['pid'] = options['pid'].join(',') if options['pid'].kind_of?(Array)
+      options[:pid] = options[:pid].join(',') if options[:pid].kind_of?(Array)
 
       response = get("/getpatterns", :query => options)['bustime_response']
       check_for_errors response['error']
@@ -110,8 +110,8 @@ module PIT
       options.merge!({
         :key => @@key
       })
-      options['rt'] = options['rt'].join(',') if options['rt'].kind_of?(Array)
-      options['stpid'] = options['stpid'].join(',') if options['stpid'].kind_of?(Array)
+      options[:rt] = options[:rt].join(',') if options[:rt].kind_of?(Array)
+      options[:stpid] = options[:stpid].join(',') if options[:stpid].kind_of?(Array)
 
       response = get("/getservicebulletins", :query => options)['bustime_response']
       check_for_errors response['error']
@@ -129,5 +129,6 @@ module PIT
     def self.check_for_errors(error)
       puts "API ERROR: #{error['msg']}" if error
     end
+    
   end
 end
