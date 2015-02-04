@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Bus-o-matic by mattcone</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Bus-o-matic</h1>
+        <p>A simple Ruby wrapper for the Pittsburgh Port Authority API </p>
+
+        <p class="view"><a href="https://github.com/mattcone/bus-o-matic">View the Project on GitHub <small>mattcone/bus-o-matic</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mattcone/bus-o-matic/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mattcone/bus-o-matic/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mattcone/bus-o-matic">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Bus-o-matic is a simple Ruby wrapper for the <a href="http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx">Pittsburgh Port Authority API</a>.
+This gem allows you to retrieve real-time information about vehicles, routes, 
+stops, and predicted arrival times for buses in Pittsburgh, Pennsylvania.
+This gem borrows heavily from <a href="https://github.com/fbonetti/cta-api">cta-api</a>
+by <a href="https://github.com/fbonetti">Frank Bonetti</a>. </p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s1"><span class="pl-pds">'</span>bus-o-matic<span class="pl-pds">'</span></span></pre></div>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup</h2>
+
+<p>Before using Bus-o-matic, you'll need to request an API key from the <a href="http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx">Port 
+Authority</a>. 
+Require the gem and add your Port Authority API key. This can be put in an initializer.</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>bus-o-matic<span class="pl-pds">'</span></span>
+
+key <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>xxxxxxxxxxxxxxxxxxxx<span class="pl-pds">"</span></span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.key <span class="pl-k">=</span> key</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>The following examples illustrate how you can use Bus-o-matic.</p>
+
+<h3>
+<a id="routes-and-stops" class="anchor" href="#routes-and-stops" aria-hidden="true"><span class="octicon octicon-link"></span></a>Routes and Stops</h3>
+
+<p>Bus-o-matic can list all of the routes available. You can also get the 
+directions for a particular route, and a list all of the stops on a route.</p>
+
+<div class="highlight highlight-ruby"><pre>
+<span class="pl-c"># Retrieve a list of all available routes</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.routes
+
+<span class="pl-c"># Retrieve the available directions for the specified route (INBOUND, OUTBOUND, etc.)</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.directions <span class="pl-c1">:rt</span> =&gt; <span class="pl-c1">16</span>
+
+<span class="pl-c"># Retrieve the stops for Route 16 heading Inbound</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.stops <span class="pl-c1">:rt</span> =&gt; <span class="pl-c1">16</span>, <span class="pl-c1">:dir</span> =&gt; <span class="pl-c1">:INBOUND</span></pre></div>
+
+<p>Note that the available directions (INBOUND, etc.) appear to be case sensitive. </p>
+
+<h3>
+<a id="patterns" class="anchor" href="#patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Patterns</h3>
+
+<p>Bus-o-matic can retrieve a set of geo-positional points for a route, something 
+known as a "pattern." Patterns can be used to outline routes on maps.</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-c"># Retrieve the pattern for Route 16</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.patterns <span class="pl-c1">:rt</span> =&gt; <span class="pl-c1">16</span></pre></div>
+
+<h3>
+<a id="vehicles" class="anchor" href="#vehicles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vehicles</h3>
+
+<p>Bus-o-matic can find all of the vehicles that are currently active on a route, 
+or retrieve information about a specific vehicle. The first step is finding 
+the active vehicles on a route.</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-c"># Returns an array of vehicles that are active on Route 16.</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.vehicles <span class="pl-c1">:rt</span> =&gt; <span class="pl-c1">16</span></pre></div>
+
+<p>You can retrieve information for vehicles on more than one route. Up to 10 
+routes can be specified at once.</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-c"># Returns an array of vehicles that are active on Routes 13, 16, and 17.</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.vehicles <span class="pl-c1">:rt</span> =&gt; [<span class="pl-s1"><span class="pl-pds">"</span>16<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>17<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>13<span class="pl-pds">"</span></span>]</pre></div>
+
+<p>You can also find information about one or more vehicles that are currently
+active. Up to 10 vehicle IDs can be specified at once.</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-c"># Returns information about a specific vehicle.</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.vehicles <span class="pl-c1">:vid</span> =&gt; <span class="pl-c1">6013</span>
+
+<span class="pl-c"># Returns information about multiple vehicles.</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.vehicles <span class="pl-c1">:vid</span> =&gt; [<span class="pl-s1"><span class="pl-pds">"</span>6013<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>6001<span class="pl-pds">"</span></span>]</pre></div>
+
+<p>Note that you cannot combine both the <code>rt</code> and <code>vid</code> parameters in a single 
+request.</p>
+
+<h3>
+<a id="predicted-arrival-times" class="anchor" href="#predicted-arrival-times" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predicted Arrival Times</h3>
+
+<p>Bus-o-matic can return predicted arrival times for one or more buses. Up to 10 
+vehicle IDs can be specified at once. Note that you cannot combine both <code>vid</code> 
+and <code>stpid</code> parameters in a single request.</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-c"># Returns predictions for a single vehicle.</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.predictions <span class="pl-c1">:vid</span> =&gt; <span class="pl-c1">5629</span>
+
+<span class="pl-c"># Returns predictions for multiple vehicles. </span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.predictions <span class="pl-c1">:vid</span> =&gt; [<span class="pl-s1"><span class="pl-pds">"</span>5629<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>5604<span class="pl-pds">"</span></span>]</pre></div>
+
+<p>You can also retrieve predictions for one or more stops. Up to 10 stop IDs can 
+be specified at once. You can combine the <code>stpid</code> and <code>rt</code> parameters, as shown
+below.</p>
+
+<div class="highlight highlight-ruby"><pre>
+<span class="pl-c"># Returns predictions for all buses on all applicable routes for single stop.</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.predictions <span class="pl-c1">:stpid</span> =&gt; <span class="pl-c1">1326</span>
+
+<span class="pl-c"># Returns predictions for multiple stops.</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.predictions <span class="pl-c1">:stpid</span> =&gt; [<span class="pl-s1"><span class="pl-pds">"</span>1326<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>18320<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>18563<span class="pl-pds">"</span></span>]
+
+<span class="pl-c"># Returns predictions for all buses on Route 16 for a single stop </span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.predictions <span class="pl-c1">:stpid</span> =&gt; <span class="pl-c1">1326</span>, <span class="pl-c1">:rt</span> =&gt; <span class="pl-c1">16</span>
+
+<span class="pl-c"># Returns predictions for buses on Routes 13, 16, and 17 for Stop 1326.</span>
+<span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.predictions <span class="pl-c1">:stpid</span> =&gt; <span class="pl-c1">1326</span>, <span class="pl-c1">:rt</span> =&gt; [<span class="pl-s1"><span class="pl-pds">"</span>13<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>16<span class="pl-pds">"</span></span>,<span class="pl-s1"><span class="pl-pds">"</span>17<span class="pl-pds">"</span></span>]</pre></div>
+
+<h3>
+<a id="system-time" class="anchor" href="#system-time" aria-hidden="true"><span class="octicon octicon-link"></span></a>System Time</h3>
+
+<p>Returns the official Port Authority API system time. </p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-s3">PIT</span>::<span class="pl-s3">Busomatic</span>.time</pre></div>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>This is my first Ruby gem, so I'd appreciate you reporting issues or creating 
+pull requests. </p>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2015 Matt Cone and 2013 fbonetti.</p>
+
+<p>The MIT License (MIT). See the LICENSE.txt file for details.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mattcone">mattcone</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
