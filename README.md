@@ -8,7 +8,7 @@
 
 Bus-o-matic is a simple Ruby wrapper for the [Pittsburgh Port Authority API] 
 (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
-This gem allows you to retrieve real-time information about vehicles, routes, 
+It allows you to retrieve real-time information about vehicles, routes, 
 stops, and predicted arrival times for buses in Pittsburgh, Pennsylvania.
 This gem borrows heavily from [cta-api] (https://github.com/fbonetti/cta-api)
 by [Frank Bonetti] (https://github.com/fbonetti). 
@@ -144,8 +144,7 @@ PIT::Busomatic.time
 
 ## Contributing
 
-This is my first Ruby gem, so I'd appreciate you reporting issues or creating 
-pull requests. 
+I'd appreciate you reporting issues or creating pull requests. 
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -155,7 +154,5 @@ pull requests.
 
 
 ## License
-
-Copyright (c) 2015 Matt Cone and 2013 fbonetti.
 
 The MIT License (MIT). See the LICENSE.txt file for details.
