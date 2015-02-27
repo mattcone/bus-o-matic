@@ -41,7 +41,7 @@ The following examples illustrate how you can use Bus-o-matic.
 ### Routes and Stops
 
 Bus-o-matic can list all of the routes available. You can also get the 
-directions for a particular route, and a list all of the stops on a route.
+directions for a particular route, and a list of all the stops on a route.
 
 ```ruby
 
