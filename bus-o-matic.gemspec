@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "hashie", '~> 3.4'
 
   s.add_development_dependency "bundler", "~> 1.5"
-  s.add_development_dependency "rake", "~> 10.4.2"
-  s.add_development_dependency "minitest", "~> 5.7.0"
-  s.add_development_dependency "minitest-reporters", "~> 1.0.17"
+  s.add_development_dependency "rake", "~> 10.4"
+  s.add_development_dependency "minitest", "~> 5.7"
+  s.add_development_dependency "minitest-reporters", "~> 1.0"
 end
