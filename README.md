@@ -6,12 +6,11 @@
 [![Build Status](https://travis-ci.org/mattcone/bus-o-matic.svg?branch=master)](https://travis-ci.org/mattcone/bus-o-matic)
 [![Test Coverage](https://codeclimate.com/github/mattcone/bus-o-matic/badges/coverage.svg)](https://codeclimate.com/github/mattcone/bus-o-matic)
 
-Bus-o-matic is a simple Ruby wrapper for the [Pittsburgh Port Authority API] 
-(http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
+Bus-o-matic is a simple Ruby wrapper for the [Pittsburgh Port Authority API](http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx).
 It allows you to retrieve real-time information about vehicles, routes, 
 stops, and predicted arrival times for buses in Pittsburgh, Pennsylvania.
-This gem borrows heavily from [cta-api] (https://github.com/fbonetti/cta-api)
-by [Frank Bonetti] (https://github.com/fbonetti). 
+This gem borrows heavily from [cta-api](https://github.com/fbonetti/cta-api)
+by [Frank Bonetti](https://github.com/fbonetti). 
 
 ## Installation
 
@@ -24,7 +23,7 @@ gem 'bus-o-matic'
 ## Setup
 
 Before using Bus-o-matic, you'll need to request an API key from the [Port 
-Authority] (http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx). 
+Authority](http://www.portauthority.org/paac/CompanyInfoProjects/DeveloperResources.aspx). 
 Require the gem and add your Port Authority API key. This can be put in an initializer.
 
 ```ruby
